@@ -3,17 +3,37 @@
   <head>
     <meta charset="utf-8">
     <title>Symphony Challenge</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="js/app.js" charset="utf-8"></script>
     <script src="js/services.js" charset="utf-8"></script>
   </head>
-  <body>
-    <div class="" ng-controller="MainController">
-      <div class="item" ng-repeat= "item in items">
-        <h1>{{item.name}}</h1>
-        <h5>{{item.msrpInCents/100 | currency}}</h5>
-        <img src={{item.mainImage.ref}} alt={{item.name}}>
+  <body ng-controller="MainController">
+    <header>
+      <div class="logo">
+        <img src="/imgs/whiteLogo.png" alt="">
       </div>
-    </div>
+      <div class="title">
+        <h1>{{data.pageTitle}}</h1>
+      </div>
+    </header>
+    <main>
+      <aside class="aside">
+        <h3>Search Options</h3>
+        <input type="text" placeholder="search items" ng-model="search.name">
+        <h3>Search by price</h3>
+        <label for="min">min</label>
+        <input type="text" name="min" ng-model="search.min">
+        <label for="min">max</label>
+        <input type="text" name="min" ng-model="search.max">
+      </aside>
+      <section class="catalog" >
+        <div class="item" ng-repeat= "item in data.items">
+          <h1>{{item.name}}</h1>
+          <h5>{{item.msrpInCents/100 | currency}}</h5>
+          <img src={{item.mainImage.ref}} alt={{item.name}}>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
