@@ -1,3 +1,6 @@
 angular.module('Symphony',[]).controller('MainController',function($scope, requestService){
-  $scope.test = requestService.item
+  requestService.getData().then(function(data){
+    $scope.test = data.extraInfo
+    console.log(data);
+  })
 })
