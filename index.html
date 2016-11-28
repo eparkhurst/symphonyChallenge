@@ -19,16 +19,22 @@
     </header>
     <main>
       <aside class="aside">
-        <h3>Search Options</h3>
-        <input type="text" placeholder="search items" ng-model="search.name">
-        <h3>Search by price</h3>
+        <h3>Order By</h3>
+        <ul class="orderBy">
+          <li ng-click="changeOrder('name')"><span ng-class="{selected:selectedTab === 'name'}">Name</span></li>
+          <li ng-click="changeOrder('msrpInCents')"><span ng-class="{selected:selectedTab === 'msrpInCents'}">Price Low to High</span></li>
+          <li ng-click="changeOrder('-msrpInCents')"><span ng-class="{selected:selectedTab === '-msrpInCents'}">Price High to Low</span></li>
+        </ul>
+        <h3>Search</h3>
+        <input type="text" placeholder="search items" ng-model="searchText">
+        <h3>Filter by price</h3>
         <label for="min">min</label>
-        <input type="text" name="min" ng-model="search.min">
+        <input class="priceFilter" type="text" name="min" ng-model="range.min">
         <label for="min">max</label>
-        <input type="text" name="min" ng-model="search.max">
+        <input class="priceFilter" type="text" name="min" ng-model="range.max">
       </aside>
       <section class="catalog" >
-        <div class="item" ng-repeat= "item in data.items">
+        <div class="item" ng-repeat= "item in data.items | orderBy:orderBy | filter:searchText| rangeFilter:range">
           <img src={{item.mainImage.ref}} alt={{item.name}}>
           <h3>{{item.name}}</h3>
           <h5>{{item.msrpInCents/100 | currency}}</h5>

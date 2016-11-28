@@ -1,6 +1,7 @@
 body{
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 main{
   display: flex;
@@ -9,7 +10,7 @@ main{
 }
 header{
   height: 15vh;
-  background-color: #002080;
+  background-color: #06324E;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
@@ -33,7 +34,36 @@ header h1{
 .aside{
   width: 24%;
   border-right: 1px solid #ddd;
+  text-align: center;
 }
+.aside h3, label{
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
+}
+.orderBy{
+  margin: 0;
+  padding: 0;
+}
+.orderBy li{
+  margin: 20px 0;
+  font-size: 20px;
+  list-style: none;
+  text-align: center;
+}
+.orderBy li:hover{
+  cursor: pointer;
+}
+.selected{
+  border-bottom: 3px solid #06324E;
+}
+input[type=text] {
+   font-size: 20px;
+}
+.priceFilter{
+  width:50px;
+}
+
 .catalog{
   display: flex;
   flex-wrap: wrap;
