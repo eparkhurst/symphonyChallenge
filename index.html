@@ -9,7 +9,11 @@
   </head>
   <body>
     <div class="" ng-controller="MainController">
-      {{test}}
+      <div class="item" ng-repeat= "item in items">
+        <h1>{{item.name}}</h1>
+        <h5>{{item.msrpInCents/100 | currency}}</h5>
+        <img src={{item.mainImage.ref}} alt={{item.name}}>
+      </div>
     </div>
   </body>
 </html>
