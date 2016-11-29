@@ -16,4 +16,4 @@ I would also create some sort of a banner. I like the current style but I feel l
 
 ## What I got blocked on
 
-I ended up writing a custom filter to use the max and min price functions. For some reason the filter is loading before the controller and thus throws an error that the range.max is undefined. The controller loads immediately after so there isn't any real effect on the site but there is an error that shows. I ended up overwriting the exceptionHandler so that it doesn't show up in the console but that is pretty hacky and I would definitely spend more time on that bug if this were for a client. 
+I ended up writing a custom filter to use the max and min price functions. For some reason the filter is loading before the controller and thus throws an error that the range.max is undefined. The controller loads immediately after so there isn't any real effect on the site but there is an error that shows. I slept on it and just wrapped everything in an if statement to check if range exists
