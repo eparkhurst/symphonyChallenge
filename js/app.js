@@ -7,6 +7,14 @@ angular.module('Symphony',[]).controller('MainController',function($scope, reque
     $scope.orderBy = "msrpInCents"
     $scope.selectedTab = "msrpInCents"
     $scope.range = {min:null,max:null}
+    $scope.open=false;
+
+    $scope.toggle = function(){
+      console.log("hit");
+      console.log($scope.open);
+      $scope.open = !$scope.open
+    }
+
     $scope.changeOrder = function(order){
       $scope.orderBy = order;
       $scope.selectedTab = order

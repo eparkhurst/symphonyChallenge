@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Symphony Challenge</title>
     <link rel="stylesheet" href="style.css">
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="js/app.js" charset="utf-8"></script>
     <script src="js/services.js" charset="utf-8"></script>
@@ -18,7 +19,8 @@
       </div>
     </header>
     <main>
-      <aside class="aside">
+      <img ng-click="toggle()" class="hamburger"src="imgs/hamburger.png">
+      <aside class="aside" ng-class="{open: open}">
         <h3>Order By</h3>
         <ul class="orderBy">
           <li ng-click="changeOrder('name')"><span ng-class="{selected:selectedTab === 'name'}">Name</span></li>
@@ -35,7 +37,7 @@
       </aside>
       <section class="catalog" >
         <div class="item" ng-repeat= "item in data.items | orderBy:orderBy | filter:searchText| rangeFilter:range">
-          <img src={{item.mainImage.ref}} alt={{item.name}}>
+          <img ng-src={{item.mainImage.ref}} alt={{item.name}}>
           <h3>{{item.name}}</h3>
           <h5>{{item.msrpInCents/100 | currency}}</h5>
         </div>

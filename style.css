@@ -18,6 +18,15 @@ header{
 header *{
   display: inline-block;
 }
+.hamburger{
+  height: 50px;
+  margin:auto;
+  display: none;
+}
+.hamburger:hover{
+  cursor: pointer;
+}
+
 .logo img{
   margin: 15px;
   height: 8vh;
@@ -36,10 +45,13 @@ header h1{
   border-right: 1px solid #ddd;
   text-align: center;
 }
-.aside h3, label{
+.aside h3, label, h5{
   font-size: 14px;
   font-weight: 300;
   color: #999;
+}
+.aside h3{
+  margin:5vh 0 2vh 0;
 }
 .orderBy{
   margin: 0;
@@ -59,6 +71,7 @@ header h1{
 }
 input[type=text] {
    font-size: 20px;
+   border: 1px solid  #06324E;
 }
 .priceFilter{
   width:50px;
@@ -84,8 +97,26 @@ input[type=text] {
     width:100%;
   }
 }
-@media (max-width:700px){
+@media (max-width:880px){
   .catalog, .aside{
     width:100%;
   }
+  .aside{
+    display: none;
+  }
+  .hamburger{
+    display: block
+  }
+}
+@media (max-width:420px){
+  .logo img{
+    margin-right: 0;
+  }
+  header h1{
+    font-size:18px;
+  }
+}
+
+.open{
+  display:block;
 }
