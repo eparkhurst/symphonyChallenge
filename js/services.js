@@ -7,7 +7,7 @@ angular.module('Symphony').factory('requestService', function($http){
     }
   }
 })
-// .factory('$exceptionHandler', [function($log, logErrorsToBackend) {
-//   return function myExceptionHandler(exception, cause) {
-//   };
-// }]);
+.factory('$exceptionHandler', [function($log, logErrorsToBackend) {
+  return function myExceptionHandler(exception, cause) {
+  };
+}]);

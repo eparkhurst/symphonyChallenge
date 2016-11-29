@@ -3,7 +3,10 @@ angular.module('Symphony',[]).controller('MainController',function($scope, reque
     $scope.data = {}
     $scope.data.bannerImage  =data.bannerImage.ref
     $scope.data.pageTitle = data.pageTitle
-    $scope.data.items = data.products
+    $scope.data.items = data.products.map((e)=>{
+      e.mainImage.ref = "https:"+e.mainImage.ref
+      return e
+    })
     $scope.orderBy = "msrpInCents"
     $scope.selectedTab = "msrpInCents"
     $scope.range = {min:null,max:null}
