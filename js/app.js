@@ -12,7 +12,7 @@ angular.module('Symphony',[])
       }
 
       angular.forEach(items, (item) =>{
-        if( item.msrpInCents/100 >= min && item.msrpInCents/100 <= max ) {
+        if( item.defaultPriceInCents/100 >= min && item.defaultPriceInCents/100 <= max ) {
             filtered.push(item)
         }
       })

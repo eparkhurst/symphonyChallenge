@@ -25,8 +25,8 @@
         <h3>Order By</h3>
         <ul class="orderBy">
           <li ng-click="changeOrder('name')"><span ng-class="{selected:selectedTab === 'name'}">Name</span></li>
-          <li ng-click="changeOrder('msrpInCents')"><span ng-class="{selected:selectedTab === 'msrpInCents'}">Price Low to High</span></li>
-          <li ng-click="changeOrder('-msrpInCents')"><span ng-class="{selected:selectedTab === '-msrpInCents'}">Price High to Low</span></li>
+          <li ng-click="changeOrder('defaultPriceInCents')"><span ng-class="{selected:selectedTab === 'defaultPriceInCents'}">Price Low to High</span></li>
+          <li ng-click="changeOrder('-defaultPriceInCents')"><span ng-class="{selected:selectedTab === '-defaultPriceInCents'}">Price High to Low</span></li>
         </ul>
         <h3>Search</h3>
         <input type="text" placeholder="search items" ng-model="searchText">
@@ -40,7 +40,7 @@
         <div class="item" ng-repeat= "item in data.items | orderBy:orderBy | filter:searchText| rangeFilter:range">
           <img ng-src={{item.mainImage.ref}} alt={{item.name}}>
           <h3>{{item.name}}</h3>
-          <h5>{{item.msrpInCents/100 | currency}}</h5>
+          <h5>{{item.defaultPriceInCents/100 | currency}}</h5>
         </div>
       </section>
     </main>

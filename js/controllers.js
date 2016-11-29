@@ -1,7 +1,7 @@
 angular.module('Symphony').controller('MainController',($scope, requestService)=>{
 
-  $scope.orderBy = "msrpInCents"
-  $scope.selectedTab = "msrpInCents"
+  $scope.orderBy = "defaultPriceInCents"
+  $scope.selectedTab = "defaultPriceInCents"
   $scope.range = {min:null,max:null}
   $scope.open=false;
 
