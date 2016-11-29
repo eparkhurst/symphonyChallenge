@@ -8,28 +8,15 @@ main{
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+/****************** Header **********************/
+
 header{
   height: 15vh;
   background-color: #06324E;
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-}
-header *{
-  display: inline-block;
-}
-.hamburger{
-  height: 50px;
-  margin:auto;
-  display: none;
-}
-.hamburger:hover{
-  cursor: pointer;
-}
-
-.logo img{
-  margin: 15px;
-  height: 8vh;
 }
 .title{
   margin-left: 50px;
@@ -40,6 +27,24 @@ header h1{
   color: white;
   margin: 0;
 }
+header *{
+  display: inline-block;
+}
+.logo img{
+  margin: 15px;
+  height: 8vh;
+}
+
+/****************** Options aside ********************/
+.hamburger{
+  height: 50px;
+  margin:auto;
+  display: none;
+}
+.hamburger:hover{
+  cursor: pointer;
+}
+
 .aside{
   width: 24%;
   border-right: 1px solid #ddd;
@@ -77,6 +82,8 @@ input[type=text] {
   width:50px;
 }
 
+/************* Main Catolog ***************/
+
 .catalog{
   display: flex;
   flex-wrap: wrap;
@@ -91,6 +98,8 @@ input[type=text] {
 .item *{
   font-weight: 400;
 }
+
+/************* Media Queries******************/
 
 @media (max-width:1000px){
   .item{
