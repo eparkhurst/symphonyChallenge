@@ -91,16 +91,45 @@ input[type=text] {
   width: 75%;
 }
 .item{
-    width:50%;
+    width:30%;
     text-align: center;
     font-family: sans-serif;
+    border: 1px solid black;
 }
 .item *{
   font-weight: 400;
 }
+.item-image{
+  width:300px;
+}
+.item:nth-child(1){
+  border-top-left-radius: 10px;
+}
+.item:nth-child(3){
+  border-top-right-radius: 10px;
+}
+.item:nth-child(4){
+  border-bottom-left-radius: 10px;
+}
+.item:nth-child(6){
+  border-bottom-right-radius: 10px;
+}
+.item:hover:before{
+  content: "+"
+}
 
 /************* Media Queries******************/
 
+/*@media (min-width:1200px){
+  .item{
+    width:30%;
+  }
+}*/
+@media (max-width:1200px){
+  .item{
+    width:50%;
+  }
+}
 @media (max-width:1000px){
   .item{
     width:100%;

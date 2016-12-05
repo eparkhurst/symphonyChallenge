@@ -38,7 +38,7 @@
       </aside>
       <section class="catalog" >
         <div class="item" ng-repeat= "item in data.items | orderBy:orderBy | filter:searchText| rangeFilter:range">
-          <img ng-src={{item.mainImage.ref}} alt={{item.name}}>
+          <img class="item-image" ng-src={{item.mainImage.ref}} alt={{item.name}}>
           <h3>{{item.name}}</h3>
           <h5>{{item.defaultPriceInCents/100 | currency}}</h5>
         </div>
