@@ -18,6 +18,16 @@
       <div class="title">
         <h1>{{data.pageTitle}}</h1>
       </div>
+      <label for="whole-sale">Whole Sale</label>
+      <input ng-model="wholeSale" type="checkbox" name="whole-sale" value="">
+      <span ng-mouseover="noMouse=false" ng-mouseleave="noMouse=true">{{cartDisplay.length}}</span>
+      <div class="dropdown" ng-class="{hidden:noMouse}">
+        <div class="item" ng-repeat= "item in cartDisplay">
+          <img class="item-image" ng-src={{item.mainImage.ref}} alt={{item.name}}>
+          <h3>{{item.name}}</h3>
+          <h5>{{item.defaultPriceInCents/100 | wholeSaleFilter:wholeSale | currency }}</h5>
+        </div>
+      </div>
     </header>
     <main>
       <img ng-click="toggle()" class="hamburger"src="imgs/hamburger.png">
@@ -40,7 +50,8 @@
         <div class="item" ng-repeat= "item in data.items | orderBy:orderBy | filter:searchText| rangeFilter:range">
           <img class="item-image" ng-src={{item.mainImage.ref}} alt={{item.name}}>
           <h3>{{item.name}}</h3>
-          <h5>{{item.defaultPriceInCents/100 | currency}}</h5>
+          <h5>{{item.defaultPriceInCents/100 | wholeSaleFilter:wholeSale | currency }}</h5>
+          <button type="button" ng-click="addItem(item)">Add to Cart</button>
         </div>
       </section>
     </main>

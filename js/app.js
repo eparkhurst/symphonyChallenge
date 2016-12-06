@@ -20,3 +20,13 @@ angular.module('Symphony',[])
     }
   }
 })
+.filter('wholeSaleFilter', function(){
+  return(price, wholeSale )=>{
+    console.log(price);
+    if(wholeSale){
+      return Number(price)*.8
+    }else{
+      return price
+    }
+  }
+})

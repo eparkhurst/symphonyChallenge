@@ -9,6 +9,9 @@ main{
   flex-wrap: wrap;
 }
 
+.hidden{
+  display: none;
+}
 /****************** Header **********************/
 
 header{
@@ -33,6 +36,9 @@ header *{
 .logo img{
   margin: 15px;
   height: 8vh;
+}
+.dropdown{
+  z-index: 7;
 }
 
 /****************** Options aside ********************/
@@ -127,7 +133,7 @@ input[type=text] {
 }*/
 @media (max-width:1200px){
   .item{
-    width:50%;
+    width:48%;
   }
 }
 @media (max-width:1000px){
